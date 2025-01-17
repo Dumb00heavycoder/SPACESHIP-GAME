@@ -89,7 +89,7 @@ def main():
        
         if projectile_count > projectile_add_increment:
             #creating a loop which only runs when projectile counts is more then the mili seconds that means every 2000 seconds projectile counts increases and this loops runs
-            for _ in range(5): # we are generating 5 projectiles here
+            for _ in range(3): # we are generating 3 projectiles here
                 #this is for randomly spawning projectile x from 0 x coordinate and a width with the particular equation
                 projectile_x = random.randint(0, WIDTH - PROJECTILE_WIDTH )
                 projectile = pygame.Rect(projectile_x, -PROJECTIE_HEIGHT, PROJECTILE_WIDTH, PROJECTIE_HEIGHT)
@@ -131,13 +131,13 @@ def main():
         if hit:
             # here u can add the scoreboard and everything 
             #this is where we make the text
-            lost_text = FONT.render("YOU LOST!, GET BETTER", 1, "red")
+            lost_text = FONT.render("I LOVE DITYA", 1, "red")
             #this is where we set size of the font and set it on our screen, remember this equation it can be used in all of ur games
             WIN.blit(lost_text, (WIDTH/2 - lost_text.get_width()/2, HEIGHT/2 - lost_text.get_height()/2))
             #here we update the display
             pygame.display.update()
             #this freezes the game for 4 seconds so u can see the screen
-            pygame.time.delay(4000)
+            pygame.time.delay(5000)
             break
 
 
@@ -147,4 +147,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
