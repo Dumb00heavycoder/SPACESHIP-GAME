@@ -131,7 +131,7 @@ def main():
         if hit:
             # here u can add the scoreboard and everything 
             #this is where we make the text
-            lost_text = FONT.render("I LOVE DITYA", 1, "red")
+            lost_text = FONT.render("YOU LOST!, GET BETTER", 1, "red")
             #this is where we set size of the font and set it on our screen, remember this equation it can be used in all of ur games
             WIN.blit(lost_text, (WIDTH/2 - lost_text.get_width()/2, HEIGHT/2 - lost_text.get_height()/2))
             #here we update the display
