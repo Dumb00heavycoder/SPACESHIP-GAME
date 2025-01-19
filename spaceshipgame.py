@@ -3,6 +3,8 @@
 import pygame 
 import time 
 import random 
+from pygame import mixer 
+mixer.init() 
 pygame.font.init()
 
 #setting resolution
@@ -18,13 +20,18 @@ PLAYER_WIDTH = 25
 PLAYER_HEIGHT = 40
 PLAYER_VELOCITY = 5
 
-#variables for my projectiles coordinates 
+#variables for my projectiles coordinates 9
 PROJECTILE_WIDTH = 10
 PROJECTIE_HEIGHT = 17
 PROJECTILE_VELOCITY = 3
 #here i am creating a variable to hold my background image
 BG = pygame.transform.scale(pygame.image.load("bg.jpg"), (WIDTH,HEIGHT))
 #i used pygame.transform.scale to scale my image from (0,0) coordinates to the maximum resolution, i did this because the real imagae's size is much smaller and it was not fitting in
+
+#loading the music
+mixer.music.load("Spaceship.mp3")
+#setting up the volume
+mixer.music.set_volume(0.7)
 
 #creating a font variable which will hold my font, here i am using comicsans font which is in my computer. further is the size which i choose to be 30 
 FONT = pygame.font.SysFont("comicsans", 30)
@@ -49,9 +56,8 @@ def draw(player, elapsed_time, projectiles):
     #this update function is used to update the screen everytime i make a change in the draw function
 
     
-
-
-
+#starting my music
+mixer.music.play()
 #i am creating a function to keep my game displayed on the screen in a constant loop 
 def main():
     run = True 
